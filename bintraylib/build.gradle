@@ -22,7 +22,13 @@ android {
     }
 
 }
-
+//开源库中有中文注释需要加
+tasks.withType(Javadoc) {
+    options{ encoding "UTF-8"
+        charSet 'UTF-8'
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -33,12 +39,14 @@ dependencies {
 }
 
 publish {
-    artifactId = ARTIFACT_ID
-    userOrg = USER_ORG
-    groupId = GROUP_ID
+    artifactId = ARTIFACT_ID        // 你的模块名称，唯一
+    userOrg = USER_ORG              // bintray用户名
+    groupId = GROUP_ID              // 模块目录
+    repoName = REPO_NAME            // 此字段为你的仓库名称，默认为'maven'
     uploadName = ARTIFACT_ID
-    publishVersion =  VERSION
-    desc = DESC
-    website = WEB_SITE
+    publishVersion =  VERSION       // 所需上传类库的版本号
+    desc = DESC                     // 描述信息
+    website = WEB_SITE              // 网页，一般就是该类库的源码地址
     licences =  [APACHE_LICENCES]
 }
+//gradlew clean build bintrayUpload -PbintrayUser=替换成你的用户名  -PbintrayKey=****************************************  -PdryRun=false

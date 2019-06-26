@@ -25,11 +25,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-//    先传包再放开这行代码，否则会报错
-    implementation 'com.wh.repo:bintraylib:1.0.1'
+    implementation 'com.wh.repo:bintraylib:1.0.2'
+
 //    Execution failed for task ':app:preDebugBuild'.
 //    > Could not resolve all files for configuration ':app:debugCompileClasspath'.
-//    > Could not find com.wh.repo:bintraylib:1.0.1.
+//    > Could not find com.wh.repo:bintraylib:1.0.2.
 //            Required by:
-//    project :app
+//    这个错误是在还没上传新包到bintray，修改了版本号直接Sync Now报的错误
 }
