@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+//提供了将您的Android或者其他作品推送到Bintray的简便方案
 apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 28
@@ -37,7 +38,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
-
+//使用publish闭包来设置你的应用的信息
 publish {
     artifactId = ARTIFACT_ID        // 你的模块名称，唯一
     userOrg = USER_ORG              // bintray用户名
